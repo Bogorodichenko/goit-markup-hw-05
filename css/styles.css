@@ -1,8 +1,9 @@
 :root {
     --text-title-color: #212121;
     --primary-text-color: #757575;
-    --acent-color: #2196F3;
+    --accent-color: #2196F3;
     --primary-background-color: #FFFFFF;
+    --timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -30,7 +31,7 @@ body {
 /* ХЕДЕР */
 .header {
     box-sizing: border-box;
-    height: 80px;
+    /* height: 80px; */
     border: 1px #ECECEC;
     background-color: #ffffff;
     border-bottom: 1px solid #EEEEEE;
@@ -46,7 +47,7 @@ body {
 .logo {
     display: block;
     padding-top: 24px;
-    padding-bottom: 24px;
+    padding-bottom: 25px;
     margin-right: 93px;
     font-family: 'Raleway';
     font-weight: 700;
@@ -58,7 +59,7 @@ body {
 }
 
 .logo-web {
-    color: var(--acent-color);
+    color: var(--accent-color);
 }
 
 .nav-list {
@@ -73,16 +74,38 @@ body {
     text-decoration: none;
     padding: 0;
     margin: 0;
+
+
 }
 
 
 .nav-links .item {
     margin-right: 50px;
+    position: relative;
 }
 
 .nav-links .item:last-child {
     margin-right: 0;
 }
+
+/* .nav-links .item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 250ms var(--timing-function);
+}
+
+.nav-links .item:hover::after {
+    opacity: 1;
+} */
 
 /* або останні два класи можна записати разом:
 .nav-links .item:not( :last-child) {
@@ -101,22 +124,35 @@ body {
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    transition: color var(--timing-function);
     /* background-color: tomato; */
 
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--acent-color);
+    color: var(--accent-color);
 }
 
-.studio {
-    color: var(--acent-color);
+.nav-link-current {
+    color: var(--accent-color);
+    position: relative;
+
 }
 
-.portfolio {
-    color: var(--acent-color);
+.nav-link-current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 }
+
 
 .header-contacts {
     display: flex;
@@ -153,17 +189,19 @@ body {
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+
+    transition: color var(--timing-function);
     /* background-color: teal; */
 }
 
 .contact-link:hover,
 .contact-link:focus,
 .contact-link-hover {
-    color: var(--acent-color);
+    color: var(--accent-color);
 }
 
 .email {
-    color: var(--acent-color);
+    color: var(--accent-color);
 }
 
 
@@ -184,7 +222,7 @@ body {
 
 .icon-envelope:hover,
 .icon-envelope:focus {
-    fill: var(--acent-color);
+    fill: var(--accent-color);
 }
 
 /* ГЕРОЙ */
@@ -221,7 +259,7 @@ body {
 }
 
 .button {
-    background-color: var(--acent-color);
+    background-color: var(--accent-color);
     color: #FFFFFF;
     font-family: inherit;
     font-weight: 700;
@@ -449,7 +487,7 @@ body {
     padding: 0;
 }
 
-.social-item {}
+/* .social-item {} */
 
 .social-link {
     display: flex;
@@ -459,17 +497,19 @@ body {
     height: 44px;
     background-color: var(--primary-background-color);
     border-radius: 50%;
+    transition: background-color var(--timing-function);
 }
 
 .social-icon {
     width: 20px;
     height: 20px;
     fill: #AFB1B8;
+    transition: fill var(--timing-function);
 }
 
 .social-link:hover,
 .social-link:focus {
-    background-color: var(--acent-color);
+    background-color: var(--accent-color);
 }
 
 .social-link:hover .social-icon {
@@ -517,6 +557,8 @@ body {
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+
+    transition: border var(--timing-function);
 }
 
 .logo-icon {
@@ -526,16 +568,17 @@ body {
     width: 106px;
     height: 60px;
     fill: #AFB1B8;
+    transition: fill var(--timing-function);
 }
 
 .logo-link:hover,
 .logo-link:focus {
-    border: 1px solid var(--acent-color);
+    border: 1px solid var(--accent-color);
 }
 
 .logo-link:hover .logo-icon,
 .logo-link:focus .logo-icon {
-    fill: var(--acent-color);
+    fill: var(--accent-color);
 }
 
 
@@ -602,11 +645,13 @@ body {
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: 0.03em;
+
+    transition: color var(--timing-function);
 }
 
 .footer-contact-link:hover,
 .footer-contact-link:focus {
-    color: var(--acent-color);
+    color: var(--accent-color);
 }
 
 .footer-socialmedia-title {
@@ -644,6 +689,8 @@ body {
     height: 44px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+
+    transition: background-color var(--timing-function);
 }
 
 .footer-social-icon {
@@ -657,7 +704,7 @@ body {
 
 .footer-social-link:hover,
 .footer-social-link:focus {
-    background-color: var(--acent-color);
+    background-color: var(--accent-color);
 }
 
 .footer-aline {
@@ -697,16 +744,18 @@ body {
     padding: 6px 22px;
     margin-right: 8px;
     cursor: pointer;
+
+    transition: color var(--timing-function), background-color var(--timing-function), box-shadow var(--timing-function);
 }
 
 .filter-all {
-    background-color: var(--acent-color);
+    background-color: var(--accent-color);
     color: #FFFFFF;
 }
 
 .filter-button:hover,
 .filter-button:focus {
-    background-color: var(--acent-color);
+    background-color: var(--accent-color);
     color: #FFFFFF;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -741,6 +790,7 @@ body {
 
 .portfolio-link {
     text-decoration: none;
+    transition: box-shadow var(--timing-function);
 }
 
 .portfolio-list>.item:hover {
