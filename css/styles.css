@@ -461,10 +461,33 @@ body {
     width: calc((100% - 60px) /3);
     margin-right: 30px;
     line-height: 0;
+    position: relative;
 }
 
 .our-work-list .item:last-child {
     margin-right: 0;
+}
+
+.our-work-overlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+
+}
+
+.our-work-overlay-text {
+    color: #FFFFFF;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    font-size: 14px;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 /* КОМАНДА */
@@ -858,11 +881,17 @@ body {
     transition: box-shadow var(--timing-function);
 }
 
-.portfolio-list>.item:hover {
+.portfolio-link:hover {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
         0px 1px 2px rgba(0, 0, 0, 0.08),
         0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
+/* .portfolio-list>.item:hover {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
+} */
 
 /* .portfolio-link:hover,
 .portfolio-link:focus {
@@ -877,7 +906,7 @@ body {
 }
 
 
-.overlay {
+.portfolio-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -907,10 +936,13 @@ body {
     overflow: hidden;
 }
 
-.item:hover .overlay {
+.item:hover .portfolio-overlay {
     transform: translateY(0);
 }
 
+.item:focus .portfolio-overlay {
+    transform: translateY(0);
+}
 
 .portfolio-cardbox {
     box-sizing: border-box;
